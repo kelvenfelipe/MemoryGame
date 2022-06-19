@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Knock';
+    src: url(img/Summer/Summer\ Knock.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(4, 16, 48); 
+    background: linear-gradient(rgb(4, 16, 48), rgb(15, 13, 0));
+}
+
+.icons {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+
+.icons__github {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 100px;
+    margin-bottom: .5rem;
+}
+
+.icons__github:hover {
+    transform: scale(1.1);
+}
+
+.icons__github img {
+    position: absolute;
+    top: 0;
+    width: 55px;
+    height: 55px;
+}
+
+.icons__linkedin:hover {
+    transform: scale(1.1);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+    width: 40%;
+    position: relative;
+}
+
+.container .titulo p{
+    text-align: center;
+    letter-spacing: 9px;
+    font-family: 'Knock';
+    color: rgb(196, 127, 38);
+    text-shadow: 1px 1px 30px rgb(255, 255, 255);
+    font-size: 4rem; 
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.memory-game {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.match {
+    position: absolute;
+    top: 250px;
+    letter-spacing: 10px;
+    font-size: 10rem;
+    color: transparent;
+    text-shadow: transparent;
+    z-index: 0;
+    font-family: 'Knock';
+    font-weight: bold;
+    transition-property: top, opacity;
+    transition-duration: 1.5s;
+    opacity: 1;
+
+}
+
+.addMatch {
+    color: rgb(180, 110, 4);
+    text-shadow: 5px 5px 30px  rgb(255, 255, 255);
+    z-index: 1;
+    opacity: 0;
+    top: -100px;
+}
+
+.card {
+    position: relative;
+    width: calc(25% - 10px);
+    height: calc(33.333% -10px);
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .2s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: .2s;
+}
+
+.card__front,
+.card__back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(202, 122, 30);
+    backface-visibility: hidden;
+}
+
+.card__front {
+    transform:  rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.division__game {
+    width: 25vw;
+    height: 35vh;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 20px;
+    position: absolute;
+    top: 175px;
+    left: 130px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    
+}
+
+.active {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+button {
+    width: 70%;
+    height: 25%;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(223, 86, 7);
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 10px white;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+span {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+span p{
+    text-align:center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-family: 'Knock';
+    color: rgb(196, 127, 38);
+    text-shadow: 1px 1px 30px rgb(255, 255, 255);
+    padding-top: 15px;
+}
+
